@@ -17,6 +17,7 @@
 	<artifactId>biblioteca</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+
 	<name>biblioteca</name>
 	<description>API de Gerenciamento de Biblioteca</description>
 
