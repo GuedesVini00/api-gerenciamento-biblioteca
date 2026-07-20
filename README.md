@@ -4,6 +4,7 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36)
+![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D)
 
 Uma API REST para gerenciamento de biblioteca, desenvolvida com Java e Spring Boot.
 
@@ -87,9 +88,10 @@ src/main/resources/application.properties
 mvn spring-boot:run
 ```
 ## Documentação da API (Swagger) 
+
 A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
 
-Acesse: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
+- Acesse: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
 
 ## Endpoints principais
 - `/obras`
