@@ -99,9 +99,9 @@ A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo 
 ## Endpoints principais
 - `/obras`
 - `/copias`
-- `/leitor`
-- `/funcionario`
-- `/emprestimo`
-- `/reserva`
+- `/leitores`
+- `/funcionarios`
+- `/emprestimos`
+- `/reservas`
 ## Autor 
 **Vinicius Guedes**
