@@ -91,7 +91,7 @@ mvn spring-boot:run
 
 A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
 
-- Acesse: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
+- Acesse: 🔗 http://localhost:8080/swagger-ui/index.html 
 
 ## Endpoints principais
 - `/obras`
