@@ -71,7 +71,8 @@ Principais entidades:
 - PostgreSQL
 
 ### Clonar o repositório
--Criar um banco PostgreSQL e configurar as informações no arquivo:
+git clone https://github.com/seu-usuario/seu-repositorio.git
+### Criar um banco PostgreSQL e configurar as informações no arquivo:
 src/main/resources/application.properties
 
 
