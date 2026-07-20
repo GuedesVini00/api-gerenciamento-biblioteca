@@ -87,7 +87,8 @@ src/main/resources/application.properties
 mvn spring-boot:run
 ```
 ## Documentação da API (Swagger) 
-A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis. 
+A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
+
 Acesse: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
 
 ## Endpoints principais
