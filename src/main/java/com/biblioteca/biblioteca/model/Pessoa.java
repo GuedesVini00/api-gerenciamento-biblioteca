@@ -14,21 +14,15 @@ import java.time.LocalDate;
 @SuperBuilder
 @MappedSuperclass
 public class Pessoa {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false)
     private String nome;
-
     @Column(length = 14, nullable = false, unique = true)
     private String cpf;
-
     private LocalDate dataNascimento;
-
     private String telefone;
-
     @Email
     private String email;
 
