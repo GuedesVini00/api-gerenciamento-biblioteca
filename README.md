@@ -5,7 +5,9 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36)
 
-Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring Boot.
+Uma API REST para gerenciamento de biblioteca, desenvolvida com Java e Spring Boot.
+
+O sistema permite controlar obras, cópias, leitores, funcionários, empréstimos e reservas, aplicando regras de negócio e boas práticas de desenvolvimento backend.
 
 ## Funcionalidades
 
@@ -30,6 +32,7 @@ Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring B
 - PostgreSQL
 - Maven
 - Lombok
+- Swagger/OpenAPI
 
 ## Estrutura do Projeto
 
@@ -71,21 +74,8 @@ Principais entidades:
 - PostgreSQL
 
 ### Clonar o repositório
-- git clone https://github.com/seu-usuario/seu-repositorio.git
-### Criar um banco PostgreSQL e configurar as informações no arquivo:
-- src/main/resources/application.properties
 
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
 
-
-## Documentação da API (Swagger)
-
-A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
-
-Acesse a documentação:
-
-🔗 Swagger UI:
-http://localhost:8080/swagger-ui/index.html
-
-## Autor
-
-**Vinicius Guedes**
+## Documentação da API (Swagger) A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis. Acesse a documentação: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html ## Autor **Vinicius Guedes**
