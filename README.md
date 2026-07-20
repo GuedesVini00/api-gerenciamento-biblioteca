@@ -1,7 +1,8 @@
 # API de Gerenciamento de Biblioteca
 
-![Java](https://img.shields.io/badge/Java-26-orange)
+![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F)
+![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-Hibernate-59666C)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36)
 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D)
@@ -43,7 +44,7 @@ O sistema permite controlar obras, cópias, leitores, funcionários, empréstimo
 - DTOs
 - Model
 - Enums
-- Tratamento de Exceções
+- Exception Handler
 
 ## Regras de Negócio
 
@@ -91,7 +92,8 @@ mvn spring-boot:run
 
 A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
 
-- Acesse: 🔗 http://localhost:8080/swagger-ui/index.html 
+- Acesse a documentação:
+ 🔗 http://localhost:8080/swagger-ui/index.html 
 
 ## Endpoints principais
 - `/obras`
