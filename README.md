@@ -77,11 +77,26 @@ Principais entidades:
 
 ```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+### Configurar o banco de dados
+Criar um banco PostgreSQL e configurar as informações no arquivo:
+src/main/resources/application.properties
+
+### Executar Aplicação
+```bash
 mvn spring-boot:run
 ```
 ## Documentação da API (Swagger) 
 A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis. 
+Acesse: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
 
-Acesse a documentação: 🔗 Swagger UI: http://localhost:8080/swagger-ui/index.html 
-
-## Autor **Vinicius Guedes**
+## Endpoints principais
+- `/obras`
+- `/copias`
+- `/leitores`
+- `/funcionarios`
+- `/emprestimos`
+- `/reservas`
+- 
+## Autor 
+**Vinicius Guedes**
