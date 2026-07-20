@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/leitor")
+@RequestMapping("/leitores")
 public class LeitorController {
     private final LeitorService service;
 

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/emprestimo")
+@RequestMapping("/emprestimos")
 @Validated
 public class EmprestimoController {
 

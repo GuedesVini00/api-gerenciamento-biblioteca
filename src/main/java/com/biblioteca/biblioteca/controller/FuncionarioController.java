@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/funcionario")
+@RequestMapping("/funcionarios")
 @Validated
 public class FuncionarioController {
 
