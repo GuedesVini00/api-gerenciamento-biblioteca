@@ -37,7 +37,7 @@ Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring B
 - Services
 - Repositories
 - DTOs
-- Models (Entidades)
+- Model
 - Enums
 - Tratamento de Exceções
 
@@ -48,6 +48,33 @@ Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring B
 - Reservas são validadas antes da criação de um empréstimo.
 - Não é permitido criar um empréstimo com data de devolução anterior à data do empréstimo.
 - O status da cópia é atualizado automaticamente de acordo com a operação realizada.
+
+## Banco de Dados
+
+O projeto utiliza PostgreSQL para persistência dos dados.
+
+Principais entidades:
+
+- Obra
+- Cópia
+- Leitor
+- Funcionário
+- Empréstimo
+- Reserva
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+- Java 26
+- Maven
+- PostgreSQL
+
+### Clonar o repositório
+-Criar um banco PostgreSQL e configurar as informações no arquivo:
+src/main/resources/application.properties
+
+
 
 ## Documentação da API (Swagger)
 
