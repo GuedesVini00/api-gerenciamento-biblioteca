@@ -1,5 +1,10 @@
 # API de Gerenciamento de Biblioteca
 
+![Java](https://img.shields.io/badge/Java-26-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
+![Maven](https://img.shields.io/badge/Maven-Build-C71A36)
+
 Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring Boot.
 
 ## Funcionalidades
