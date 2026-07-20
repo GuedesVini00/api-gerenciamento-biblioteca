@@ -49,6 +49,15 @@ Uma API REST para gerenciamento de bibliotecas, desenvolvida com Java e Spring B
 - Não é permitido criar um empréstimo com data de devolução anterior à data do empréstimo.
 - O status da cópia é atualizado automaticamente de acordo com a operação realizada.
 
+## Documentação da API (Swagger)
+
+A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo visualizar e testar os endpoints disponíveis.
+
+Acesse a documentação:
+
+🔗 Swagger UI:
+http://localhost:8080/swagger-ui/index.html
+
 ## Autor
 
 **Vinicius Guedes**
