@@ -100,6 +100,5 @@ A documentação da API foi desenvolvida utilizando Swagger/OpenAPI, permitindo 
 - `/funcionarios`
 - `/emprestimos`
 - `/reservas`
-- 
 ## Autor 
 **Vinicius Guedes**
