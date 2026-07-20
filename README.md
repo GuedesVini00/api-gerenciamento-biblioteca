@@ -2,7 +2,7 @@
 
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F)
-![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-Hibernate-59666C)
+![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-Hibernate-purple)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36)
 ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D)
