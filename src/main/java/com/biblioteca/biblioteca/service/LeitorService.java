@@ -4,6 +4,7 @@ import com.biblioteca.biblioteca.dto.LeitorDTO;
 import com.biblioteca.biblioteca.exception.NotFoundException;
 import com.biblioteca.biblioteca.model.Leitor;
 import com.biblioteca.biblioteca.repository.LeitorRepository;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,15 +22,21 @@ public class LeitorService {
         return repository.findAll();
     }
 
-    public void salvar(LeitorDTO leitordto){
-        Leitor leitor = Leitor.builder()
+    public void salvar(LeitorDTO leitordto) throws BadRequestException {
+        Leitor leitor = repository.findByEmail(leitordto.getEmail())
+                .orElse(null);
+
+        if(leitor != null){
+            throw new BadRequestException("Leitor ja cadastrado!");
+        }
+
+        repository.save(Leitor.builder()
                 .nome(leitordto.getNome())
                 .cpf(leitordto.getCpf())
                 .dataNascimento(leitordto.getDataNascimento())
                 .telefone(leitordto.getTelefone())
                 .email(leitordto.getEmail())
-                .build();
-        repository.save(leitor);
+                .build());
     }
 
     public Leitor atualizar(Long id, LeitorDTO leitordto) throws NotFoundException {

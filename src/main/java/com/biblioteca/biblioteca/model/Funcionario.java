@@ -2,6 +2,7 @@ package com.biblioteca.biblioteca.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -14,6 +15,9 @@ import lombok.experimental.SuperBuilder;
 public class Funcionario extends Pessoa{
     @Column(nullable = false)
     private String cargo;
+
+    @OneToOne(mappedBy = "funcionario")
+    private UsuarioEntity usuario;
 
     @Override
     public String toString() {

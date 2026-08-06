@@ -6,6 +6,7 @@ import com.biblioteca.biblioteca.exception.NotFoundException;
 import com.biblioteca.biblioteca.model.Leitor;
 import com.biblioteca.biblioteca.service.LeitorService;
 import jakarta.validation.Valid;
+import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class LeitorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void salvar(@Valid @RequestBody LeitorDTO leitorDto){
+    public void salvar(@Valid @RequestBody LeitorDTO leitorDto) throws BadRequestException {
         service.salvar(leitorDto);
     }
 
