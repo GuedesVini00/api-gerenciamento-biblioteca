@@ -2,6 +2,7 @@ package com.biblioteca.biblioteca.controller;
 
 import com.biblioteca.biblioteca.dto.LoginRequestDTO;
 import com.biblioteca.biblioteca.dto.RegisterRequestDTO;
+import com.biblioteca.biblioteca.dto.TokenResponseDTO;
 import com.biblioteca.biblioteca.exception.BusinessException;
 import com.biblioteca.biblioteca.service.AuthenticationService;
 import jakarta.validation.Valid;
@@ -24,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public void login (@RequestBody @Valid LoginRequestDTO loginrRequestDTO) throws BusinessException {
-        authenticationService.login(loginRequestDTO);
+    public TokenResponseDTO login (@RequestBody @Valid LoginRequestDTO loginRequestDTO) throws BusinessException {
+        return authenticationService.login(loginRequestDTO);
     }
 }
