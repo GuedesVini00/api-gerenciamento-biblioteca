@@ -1,10 +1,9 @@
+
 package com.biblioteca.biblioteca.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -21,26 +20,33 @@ import java.util.Set;
 @Builder
 public class UsuarioEntity implements UserDetails {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
+    @Column(nullable = false, unique = true)
     private String email;
 
     @NotBlank
+    @Column(nullable = false)
     private String senha;
 
-    @NotNull
-    @OneToOne(optional = false)
+    @OneToOne
     @JoinColumn(name = "funcionario_id", unique = true)
     private Funcionario funcionario;
 
+    @OneToOne
+    @JoinColumn(name = "leitor_id", unique = true)
+    private Leitor leitor;
+
+    @Builder.Default
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuarios_roles",
+    @JoinTable(
+            name = "usuarios_roles",
             joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private Set<RolesEntity> roles = new HashSet<>();
 
     @Override
@@ -49,7 +55,7 @@ public class UsuarioEntity implements UserDetails {
     }
 
     @Override
-    public @Nullable String getPassword() {
+    public String getPassword() {
         return senha;
     }
 
@@ -60,21 +66,21 @@ public class UsuarioEntity implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return UserDetails.super.isAccountNonExpired();
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return UserDetails.super.isAccountNonLocked();
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return UserDetails.super.isCredentialsNonExpired();
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+        return true;
     }
 }

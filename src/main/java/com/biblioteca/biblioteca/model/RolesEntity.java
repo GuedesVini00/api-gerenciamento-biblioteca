@@ -16,6 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 public class RolesEntity implements GrantedAuthority {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
