@@ -59,9 +59,11 @@ public class TokenProvider {
 
 
         return Jwts.parser()
-                .verifyWith(getSigninKey()) // validar assinatura
+                // validar assinatura
+                .verifyWith(getSigninKey())
                 .build()
-                .parseSignedClaims(token) //validar expiração
+                //validar expiração
+                .parseSignedClaims(token)
                 .getPayload(); // pegar o claim
     }
 
