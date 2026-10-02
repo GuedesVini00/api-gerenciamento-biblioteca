@@ -1,10 +1,10 @@
 package com.biblioteca.biblioteca.service;
 
 import com.biblioteca.biblioteca.config.TokenProvider;
-import com.biblioteca.biblioteca.dto.LoginRequestDTO;
-import com.biblioteca.biblioteca.dto.RegisterLeitorRequestDTO;
-import com.biblioteca.biblioteca.dto.RegisterRequestDTO;
-import com.biblioteca.biblioteca.dto.TokenResponseDTO;
+import com.biblioteca.biblioteca.dto.auth.LoginRequestDTO;
+import com.biblioteca.biblioteca.dto.auth.RegisterLeitorRequestDTO;
+import com.biblioteca.biblioteca.dto.auth.RegisterRequestDTO;
+import com.biblioteca.biblioteca.dto.auth.TokenResponseDTO;
 import com.biblioteca.biblioteca.enums.RoleType;
 import com.biblioteca.biblioteca.exception.BusinessException;
 import com.biblioteca.biblioteca.model.Funcionario;

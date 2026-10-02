@@ -37,7 +37,48 @@ public class SecurityConfiguration {
                         response.setStatus(HttpStatus.FORBIDDEN.value());
                     }))
                 .authorizeHttpRequests(auth ->
+
+                        //AUTORIZAÇÃO PARA REGISTRO E LOGIN:
                     auth.requestMatchers(HttpMethod.POST,"/auth/**").permitAll()
+
+                            // OBRAS:
+                            .requestMatchers(HttpMethod.GET, "/obras/**").permitAll()
+
+                            .requestMatchers(HttpMethod.POST, "/obras/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.PUT, "/obras/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.DELETE, "/obras/**")
+                            .hasAnyRole("FUNCIONARIO","ADMIN")
+
+
+                            // COPIAS:
+                            .requestMatchers(HttpMethod.GET, "/copias/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.POST, "/copias/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.PUT, "/copias/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.DELETE, "/copias/**")
+                            .hasAnyRole("FUNCIONARIO","ADMIN")
+
+                            
+                            // LEITORES:
+
+                            .requestMatchers(HttpMethod.GET, "/leitores/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.PUT, "/leitores/**")
+                            .hasAnyRole("FUNCIONARIO", "ADMIN")
+
+                            .requestMatchers(HttpMethod.DELETE, "/leitores/**")
+                            .hasRole("ADMIN")
+
                             .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

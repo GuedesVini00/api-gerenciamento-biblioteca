@@ -1,4 +1,4 @@
-package com.biblioteca.biblioteca.dto;
+package com.biblioteca.biblioteca.dto.auth;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

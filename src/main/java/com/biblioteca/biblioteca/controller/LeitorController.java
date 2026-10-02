@@ -2,6 +2,7 @@ package com.biblioteca.biblioteca.controller;
 
 
 import com.biblioteca.biblioteca.dto.LeitorDTO;
+import com.biblioteca.biblioteca.dto.leitor.LeitorResponseDTO;
 import com.biblioteca.biblioteca.exception.NotFoundException;
 import com.biblioteca.biblioteca.model.Leitor;
 import com.biblioteca.biblioteca.service.LeitorService;
@@ -25,7 +26,7 @@ public class LeitorController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Leitor> listar(){
+    public List<LeitorResponseDTO> listar(){
         return service.listar();
     }
 

@@ -1,6 +1,8 @@
 package com.biblioteca.biblioteca.service;
 
 import com.biblioteca.biblioteca.dto.LeitorDTO;
+import com.biblioteca.biblioteca.dto.funcionario.FuncionarioResponseDTO;
+import com.biblioteca.biblioteca.dto.leitor.LeitorResponseDTO;
 import com.biblioteca.biblioteca.exception.NotFoundException;
 import com.biblioteca.biblioteca.model.Leitor;
 import com.biblioteca.biblioteca.repository.LeitorRepository;
@@ -10,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 public class LeitorService {
     private final LeitorRepository repository;
@@ -18,8 +22,19 @@ public class LeitorService {
         this.repository = repository;
     }
 
-    public List<Leitor> listar(){
-        return repository.findAll();
+    public List<LeitorResponseDTO> listar(){
+
+        return repository.findAll()
+                .stream()
+                .map(leitor -> new LeitorResponseDTO(
+                        leitor.getId(),
+                        leitor.getNome(),
+                        leitor.getCpf(),
+                        leitor.getDataNascimento(),
+                        leitor.getTelefone(),
+                        leitor.getEmail())
+                )
+                .toList();
     }
 
     public void salvar(LeitorDTO leitordto) throws BadRequestException {

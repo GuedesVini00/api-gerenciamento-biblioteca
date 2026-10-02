@@ -1,6 +1,7 @@
 package com.biblioteca.biblioteca.service;
 
-import com.biblioteca.biblioteca.dto.FuncionarioDTO;
+import com.biblioteca.biblioteca.dto.funcionario.FuncionarioRequestDTO;
+import com.biblioteca.biblioteca.dto.funcionario.FuncionarioResponseDTO;
 import com.biblioteca.biblioteca.exception.BusinessException;
 import com.biblioteca.biblioteca.exception.NotFoundException;
 import com.biblioteca.biblioteca.model.Funcionario;
@@ -19,44 +20,56 @@ public class FuncionarioService {
         this.repository = repository;
     }
 
-    public List<Funcionario> listar(){
-        return repository.findAll();
+    public List<FuncionarioResponseDTO> listar() {
+
+        return repository.findAll()
+                .stream()
+                .map(funcionario -> new FuncionarioResponseDTO(
+                        funcionario.getId(),
+                        funcionario.getNome(),
+                        funcionario.getCpf(),
+                        funcionario.getDataNascimento(),
+                        funcionario.getTelefone(),
+                        funcionario.getEmail(),
+                        funcionario.getCargo()
+                ))
+                .toList();
     }
 
     @Transactional
-    public Funcionario salvar(FuncionarioDTO funcionarioDto) throws BusinessException {
+    public Funcionario salvar(FuncionarioRequestDTO funcionarioRequestDto) throws BusinessException {
 
-        if(funcionarioDto.getNome()==null || funcionarioDto.getCargo()==null){
+        if(funcionarioRequestDto.getNome()==null || funcionarioRequestDto.getCargo()==null){
             throw new BusinessException("Nome e cargo são obrigatórios!");
         }
 
-        if(repository.findByCpf(funcionarioDto.getCpf()).isPresent()){
+        if(repository.findByCpf(funcionarioRequestDto.getCpf()).isPresent()){
             throw new BusinessException("CPF ja cadastrado!");
         }
 
         Funcionario funcionario = Funcionario.builder()
-                .nome(funcionarioDto.getNome())
-                .cpf(funcionarioDto.getCpf())
-                .dataNascimento(funcionarioDto.getDataNascimento())
-                .telefone(funcionarioDto.getTelefone())
-                .telefone(funcionarioDto.getTelefone())
-                .email(funcionarioDto.getEmail())
-                .cargo(funcionarioDto.getCargo())
+                .nome(funcionarioRequestDto.getNome())
+                .cpf(funcionarioRequestDto.getCpf())
+                .dataNascimento(funcionarioRequestDto.getDataNascimento())
+                .telefone(funcionarioRequestDto.getTelefone())
+                .telefone(funcionarioRequestDto.getTelefone())
+                .email(funcionarioRequestDto.getEmail())
+                .cargo(funcionarioRequestDto.getCargo())
                 .build();
 
         return repository.save(funcionario);
     }
 
-    public Funcionario atualizar(Long id, FuncionarioDTO funcionarioDTO) throws NotFoundException {
+    public Funcionario atualizar(Long id, FuncionarioRequestDTO funcionarioRequestDTO) throws NotFoundException {
 
         Funcionario funcionario = repository.findById(id).orElseThrow(()-> new NotFoundException("Funcionário não encontrado"));
 
-        if (funcionarioDTO.getNome() != null)funcionario.setNome(funcionarioDTO.getNome());
-        if (funcionarioDTO.getCpf() != null)funcionario.setCpf(funcionarioDTO.getCpf());
-        if (funcionarioDTO.getDataNascimento() != null)funcionario.setDataNascimento(funcionarioDTO.getDataNascimento());
-        if (funcionarioDTO.getTelefone() != null)funcionario.setTelefone(funcionarioDTO.getTelefone());
-        if (funcionarioDTO.getEmail() != null)funcionario.setEmail(funcionarioDTO.getEmail());
-        if (funcionarioDTO.getCargo() != null)funcionario.setCargo(funcionarioDTO.getCargo());
+        if (funcionarioRequestDTO.getNome() != null)funcionario.setNome(funcionarioRequestDTO.getNome());
+        if (funcionarioRequestDTO.getCpf() != null)funcionario.setCpf(funcionarioRequestDTO.getCpf());
+        if (funcionarioRequestDTO.getDataNascimento() != null)funcionario.setDataNascimento(funcionarioRequestDTO.getDataNascimento());
+        if (funcionarioRequestDTO.getTelefone() != null)funcionario.setTelefone(funcionarioRequestDTO.getTelefone());
+        if (funcionarioRequestDTO.getEmail() != null)funcionario.setEmail(funcionarioRequestDTO.getEmail());
+        if (funcionarioRequestDTO.getCargo() != null)funcionario.setCargo(funcionarioRequestDTO.getCargo());
 
         return repository.save(funcionario);
 
